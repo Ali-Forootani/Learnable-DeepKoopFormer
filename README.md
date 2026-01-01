@@ -98,7 +98,7 @@ https://doi.org/10.5281/zenodo.18115612
 
 ## Example Figures
 
-### Learnable DeepKoopFormer Energy systems dataset ( 6 Channels)
+### Learnable DeepKoopFormer Energy systems dataset (6 Channels)
 ![Energy Systems Dataset](pictures/koopformer_pro_error_dist_energy_systems_violin_panel.png)
 
 
