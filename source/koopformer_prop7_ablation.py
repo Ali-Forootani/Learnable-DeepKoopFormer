@@ -874,6 +874,8 @@ def run_single_experiment(raw: np.ndarray,
     x_all, y_all, _ = build_dataset(raw, indices, effective_seq_len, horizon, max_rows=max_rows)
     x_train, y_train, x_test, y_test = split_train_test(x_all, y_all, train_frac)
 
+    
+    """
     configs = [
         ("constr", "none", lyap_weight, "Constrained + Lyap"),
         ("constr", "none", 0.0, "Constrained no Lyap"),
@@ -882,6 +884,26 @@ def run_single_experiment(raw: np.ndarray,
         ("unconstr", "none", lyap_weight, "Unconstrained + Lyap"),
         ("unconstr", "none", 0.0, "Unconstrained no Lyap"),
     ]
+    """
+    
+    
+    learnable_kinds = ["scalar", "permode", "mlp", "lowrank16"]
+
+    configs = [
+        ("constr", "none", lyap_weight, "Constrained + Lyap"),
+        ("constr", "none", 0.0, "Constrained no Lyap"),
+    ]
+    
+    for kind in learnable_kinds:
+        configs.extend([
+            ("learn", kind, lyap_weight, f"{kind} + Lyap"),
+            ("learn", kind, 0.0, f"{kind} no Lyap"),
+        ])
+    
+    configs.extend([
+        ("unconstr", "none", lyap_weight, "Unconstrained + Lyap"),
+        ("unconstr", "none", 0.0, "Unconstrained no Lyap"),
+    ])
 
     exp_tag = f"seed{seed}_{backbone}_P{patch_len}_H{horizon}"
     exp_dir = save_dir / exp_tag
