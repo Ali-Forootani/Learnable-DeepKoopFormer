@@ -1,12 +1,12 @@
-# Learnable-DeepKoopFormer
+# Learnable-DeepKoopman
 
-**A Learnable Koopman-Enhanced Transformer Framework with Spectral Control for Multivariate Time Series Forecasting**
+**Learnable Koopman Dynamics for Neural Time-Series Modeling**
 
 ---
 
 ## Overview
 
-**Learnable-DeepKoopFormer** is a research-grade forecasting framework that unifies
+**Learnable-DeepKoopman** is a research-grade forecasting framework that unifies
 **Transformer-based sequence models** with **learnable Koopman operators**
 to deliver **stable, interpretable, and scalable multivariate time-series forecasting**.
 
