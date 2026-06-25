@@ -58,5 +58,4 @@ srun python koopformer_prop7_ablation.py \
   --num_layers 3 \
   --dim_ff 96 \
   --rho_max 0.99 \
-  --learnable_kind scalar \
   --lyap_weight 0.1
